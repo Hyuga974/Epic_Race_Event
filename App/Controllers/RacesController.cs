@@ -20,7 +20,7 @@ namespace App.Controllers
                 {
                     Id = 1,
                     Name = "Ma course 123",
-                    EventDate = new DateOnly(2022, 04, 02)
+                    EventDate = new DateOnly(2022, 04, 02),
                 },
                 new Race()
                 {

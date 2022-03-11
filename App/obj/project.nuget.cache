@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RwIgHBhbDmd641hCzE1A5zRlogk8aV0fIfWYD+tCOwTEvbZF90zzXgjqUmNb+pxjXj6eU09kDcex/wtyAzHtIQ==",
+  "dgSpecHash": "pmBFoFwDxQhadh9tLlBdV1lcAAdznQhDI3VJee+XSFa7gxPafd6yuCG4OxfPyXZCCF9Twg3ZK+cPjs3ceC5aCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\App\\App\\App.csproj",
+  "projectFilePath": "C:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\Epic_Race_Event\\App\\App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\reype\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\reype\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

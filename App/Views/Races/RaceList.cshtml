@@ -14,9 +14,6 @@
     <thead>
         <tr>
             <th>
-                Id
-            </th>
-            <th>
                 Race Name
             </th>
             <th>
@@ -28,9 +25,6 @@
     <tbody>
 @foreach (var item in Model.RaceList) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

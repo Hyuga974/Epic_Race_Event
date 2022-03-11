@@ -8631,11 +8631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\App\\App\\App.csproj",
+      "projectUniqueName": "c:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\Epic_Race_Event\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "C:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\App\\App\\App.csproj",
+      "projectPath": "c:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\Epic_Race_Event\\App\\App.csproj",
       "packagesPath": "C:\\Users\\reype\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\App\\App\\obj\\",
+      "outputPath": "c:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\Epic_Race_Event\\App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
