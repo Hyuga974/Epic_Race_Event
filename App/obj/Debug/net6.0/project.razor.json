@@ -16343,6 +16343,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\maxmo\\Desktop\\Codes\\FrameworkWeb\\Epic_Race_Event\\App\\Views\\Drivers\\Profil.cshtml",
+      "TargetPath": "Views\\Drivers\\Profil.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\maxmo\\Desktop\\Codes\\FrameworkWeb\\Epic_Race_Event\\App\\Views\\Races\\DetailsRace.cshtml",
+      "TargetPath": "Views\\Races\\DetailsRace.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\maxmo\\Desktop\\Codes\\FrameworkWeb\\Epic_Race_Event\\App\\Views\\Shared\\_MyLayout.cshtml",
       "TargetPath": "Views\\Shared\\_MyLayout.cshtml",
       "FileKind": "mvc"

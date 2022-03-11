@@ -14,10 +14,19 @@
     <thead>
         <tr>
             <th>
-                Race Name
+                Id
+            </th>
+            <th>
+                Nom de la course
             </th>
             <th>
                 Date
+            </th>
+            <th>
+                Commence à
+            </th>
+            <th>
+                Nombre de places disponibles
             </th>
             <th></th>
         </tr>
@@ -26,14 +35,23 @@
 @foreach (var item in Model.RaceList) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @item.EventDate.ToShortDateString()
+                @Html.DisplayFor(modelItem => item.EventDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbDrivers) / @Html.DisplayFor(modelItem => item.LimitDrivers)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>

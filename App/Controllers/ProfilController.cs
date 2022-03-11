@@ -2,60 +2,41 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using App.Models;
-using App.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace App.Controllers
 {
-    public class RacesController : Controller
+    public class ProfilController : Controller
     {
-        // GET: Races
+        // GET: Profil
         public ActionResult Index()
         {
-            var races = new List<Race>()
-            {
-                new Race(1,"La course de ma vie", new DateTime(2022, 02, 14, 18,10, 00), 15, 20),
-                new Race(2,"Ma super pas course", new DateTime(2022, 02, 02, 22, 20, 22), 22, 18),
-                new Race(3,"Ma course pourrie", new DateTime(2022, 04, 02, 16, 15, 00), 50, 21),
-            };
-
-            var raceListViewModel = new RaceListViewModel(
-                races,
-                "Liste de courses"
-            );
-
-            return View("RaceList", raceListViewModel);
+            return View();
         }
 
-        // GET: Races/Details/5
+        // GET: Profil/Details/5
         public ActionResult Details(int id)
         {
-
-            return View("DetailsRace");
+            return View();
         }
 
-        // GET: Races/Create
+        // GET: Profil/Create
         public ActionResult Create()
         {
-            return View("CreateRace");
+            return View();
         }
 
-        // POST: Races/Create
+        // POST: Profil/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Race race)
+        public ActionResult Create(IFormCollection collection)
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    return RedirectToAction(nameof(Index));
-                }
                 // TODO: Add insert logic here
-                return View("CreateRace");
 
+                return RedirectToAction(nameof(Index));
             }
             catch
             {
@@ -63,13 +44,13 @@ namespace App.Controllers
             }
         }
 
-        // GET: Races/Edit/5
+        // GET: Profil/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Races/Edit/5
+        // POST: Profil/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -86,13 +67,13 @@ namespace App.Controllers
             }
         }
 
-        // GET: Races/Delete/5
+        // GET: Profil/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Races/Delete/5
+        // POST: Profil/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
