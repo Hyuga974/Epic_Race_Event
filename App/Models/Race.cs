@@ -20,9 +20,10 @@ namespace App.Models
         public string? Result { get; set; }
         public string? CatVehicle { get; set; } //A changer pour un enum des vehicles
 
-        public Race(string name, DateTime date, int nbDrivers, int age){
+        public Race(int id, string name, DateTime date, int nbDrivers, int age){
             DriversList = new List<Driver>();
             
+            Id = id;
             Name = name;
             Date = date;
             EventDate = date.ToString("d");

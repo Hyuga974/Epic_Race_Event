@@ -27,6 +27,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/reype/Documents/YNOV/B2/FrameworkWeb/Epic_Race_Event/App/Views/Drivers/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyc1xQcm9maWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/reype/Documents/YNOV/B2/FrameworkWeb/Epic_Race_Event/App/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -37,6 +41,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/reype/Documents/YNOV/B2/FrameworkWeb/Epic_Race_Event/App/Views/Races/CreateRace.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFjZXNcQ3JlYXRlUmFjZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/reype/Documents/YNOV/B2/FrameworkWeb/Epic_Race_Event/App/Views/Races/DetailsRace.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFjZXNcRGV0YWlsc1JhY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/reype/Documents/YNOV/B2/FrameworkWeb/Epic_Race_Event/App/Views/Races/Index.cshtml]

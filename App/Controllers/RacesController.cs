@@ -16,9 +16,9 @@ namespace App.Controllers
         {
             var races = new List<Race>()
             {
-                new Race("La course de ma vie", new DateTime(2022, 02, 14, 18,10, 00), 15, 20),
-                new Race("Ma super pas course", new DateTime(2022, 02, 02, 22, 20, 22), 30, 18),
-                new Race("Ma course pourrie", new DateTime(2022, 04, 02, 16, 15, 00), 50, 21),
+                new Race(1,"La course de ma vie", new DateTime(2022, 02, 14, 18,10, 00), 15, 20),
+                new Race(2,"Ma super pas course", new DateTime(2022, 02, 02, 22, 20, 22), 22, 18),
+                new Race(3,"Ma course pourrie", new DateTime(2022, 04, 02, 16, 15, 00), 50, 21),
             };
 
             var raceListViewModel = new RaceListViewModel(
@@ -33,7 +33,7 @@ namespace App.Controllers
         public ActionResult Details(int id)
         {
 
-            return View();
+            return View("DetailsRace");
         }
 
         // GET: Races/Create
