@@ -14,10 +14,16 @@
     <thead>
         <tr>
             <th>
-                Race Name
+                Nom de la course
             </th>
             <th>
                 Date
+            </th>
+            <th>
+                Commence à
+            </th>
+            <th>
+                Nombre de places disponibles
             </th>
             <th></th>
         </tr>
@@ -29,7 +35,13 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @item.EventDate.ToShortDateString()
+                @Html.DisplayFor(modelItem => item.EventDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbDrivers) / @Html.DisplayFor(modelItem => item.LimitDrivers)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
