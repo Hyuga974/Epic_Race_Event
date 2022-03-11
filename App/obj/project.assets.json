@@ -8625,25 +8625,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\reype\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\maxmo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\Epic_Race_Event\\App\\App.csproj",
+      "projectUniqueName": "c:\\Users\\maxmo\\Desktop\\Codes\\FrameworkWeb\\Epic_Race_Event\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "c:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\Epic_Race_Event\\App\\App.csproj",
-      "packagesPath": "C:\\Users\\reype\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\reype\\Documents\\YNOV\\B2\\FrameworkWeb\\Epic_Race_Event\\App\\obj\\",
+      "projectPath": "c:\\Users\\maxmo\\Desktop\\Codes\\FrameworkWeb\\Epic_Race_Event\\App\\App.csproj",
+      "packagesPath": "C:\\Users\\maxmo\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\maxmo\\Desktop\\Codes\\FrameworkWeb\\Epic_Race_Event\\App\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\reype\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\maxmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
