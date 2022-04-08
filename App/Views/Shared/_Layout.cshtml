@@ -1,28 +1,28 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html class="bg-gray-400 scroll-smooth max-w-full overflow-x-hidden" lang="en">
 
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - App</title>
+	<title>Epic Race Event - @ViewData["Title"]</title>
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/App.styles.css" asp-append-version="true" />
 </head>
 
 <body>
-	<nav class="flex items-center justify-between px-48 py-2 bg-stone-800 text-gray-300">
+	<nav
+		class="w-screen flex items-center justify-between px-48 py-2 h-10 bg-sand-normal select-none bg-stone-800 text-gray-300">
 		<a class="font-semibold" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
 		<a class="font-semibold" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
 		<a class="font-semibold" asp-area="" asp-controller="Races" asp-action="Index">Races</a>
 		<a class="font-semibold" asp-area="" asp-controller="Drivers" asp-action="Index">Drivers</a>
 	</nav>
-	<div>
-		<main role="main">
-			@RenderBody()
-		</main>
+
+	<div class="bg-white m-auto mt-0 h-screen w-2/3">
+		@RenderBody()
 	</div>
 
-	<footer>
+	<footer class="bg-stone-800 h-36 flex">
 		<div>
 			&copy; 2022 - App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
 		</div>
