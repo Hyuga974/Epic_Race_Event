@@ -7,27 +7,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace App.Controllers
 {
-    public class ProfilController : Controller
+    public class DriverController : Controller
     {
-        // GET: Profil
+        // GET: Driver
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Profil/Details/5
+        // GET: Driver/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Profil/Create
+        // GET: Driver/Create
         public ActionResult Create()
         {
-            return View();
+            return View("CreateDriver");
         }
 
-        // POST: Profil/Create
+        // POST: Driver/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -44,13 +44,13 @@ namespace App.Controllers
             }
         }
 
-        // GET: Profil/Edit/5
+        // GET: Driver/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Profil/Edit/5
+        // POST: Driver/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -67,13 +67,13 @@ namespace App.Controllers
             }
         }
 
-        // GET: Profil/Delete/5
+        // GET: Driver/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Profil/Delete/5
+        // POST: Driver/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
