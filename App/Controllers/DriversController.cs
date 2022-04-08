@@ -68,11 +68,11 @@ namespace App.Controllers
 
                     return RedirectToAction(nameof(Index));
                 }
-                return RedirectToAction(nameof(Index));
+                return View("CreateDriver");
             }
             catch
             {
-                return View();
+                return View("CreateDriver");
             }
         }
 
