@@ -16,6 +16,11 @@ namespace App.Models
         [MinLength(8), MaxLength(15), RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$")]        
         public string? Password { get; set; }
         public string? Email { get; set; }
-        public DateOnly BirthDate { get; set; }
+
+        [Required()]
+        public DateTime BirthDate { get; set; }    
+
     }
+
+
 }

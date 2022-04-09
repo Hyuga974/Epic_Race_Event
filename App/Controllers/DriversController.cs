@@ -52,8 +52,7 @@ namespace App.Controllers
             {
                 // TODO: Add insert logic here
                 Console.WriteLine("Creating");
-                Console.WriteLine();
-                if (ModelState.IsValid)
+                if (ModelState.IsValid && DateTime.Compare(newDriver.BirthDate, new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day))<=0)
                 {
                     // TODO: Add insert logic here
 
@@ -61,6 +60,7 @@ namespace App.Controllers
                     Console.WriteLine(newDriver.FirstName);
                     Console.WriteLine(newDriver.LastName);
                     Console.WriteLine(newDriver.BirthDate);
+
                     Console.WriteLine(newDriver.Email);
 
                     //_dbContext.Races.Add(newRace);
