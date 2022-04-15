@@ -18,14 +18,14 @@ namespace App.Controllers
                 new Driver()
                 {
                     Id = 1,
-                    firstName="Tamashi",
-                    lastName="Yami"
+                    FirstName="Tamashi",
+                    LastName="Yami"
                 },
                 new Driver()
                 {
                     Id = 2,
-                    firstName="Toto",
-                    lastName="Ynov"
+                    FirstName="Toto",
+                    LastName="Ynov"
                 },
             };
             return View(drivers);
@@ -40,23 +40,39 @@ namespace App.Controllers
         // GET: Drivers/Create
         public ActionResult Create()
         {
-            return View("CreateDrivers");
+            return View("CreateDriver");
         }
 
         // POST: Drivers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(IFormCollection collection, Driver newDriver)
         {
             try
             {
                 // TODO: Add insert logic here
+                Console.WriteLine("Creating");
+                if (ModelState.IsValid && DateTime.Compare(newDriver.BirthDate, new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day))<=0)
+                {
+                    // TODO: Add insert logic here
 
-                return RedirectToAction(nameof(Index));
+                    Console.WriteLine(newDriver.Id);
+                    Console.WriteLine(newDriver.FirstName);
+                    Console.WriteLine(newDriver.LastName);
+                    Console.WriteLine(newDriver.BirthDate);
+
+                    Console.WriteLine(newDriver.Email);
+
+                    //_dbContext.Races.Add(newRace);
+                    //_dbContext.SaveChanges();
+
+                    return RedirectToAction(nameof(Index));
+                }
+                return View("CreateDriver");
             }
             catch
             {
-                return View();
+                return View("CreateDriver");
             }
         }
 
