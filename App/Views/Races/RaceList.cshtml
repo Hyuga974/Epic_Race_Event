@@ -2,13 +2,13 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "_Layout";
+    Layout = "_MyLayout";
 }
 
 <h1>@Model.HeaderTitle</h1>
 
 <p>
-    <a asp-action="Create">Create Race</a>
+    <a asp-action="Create">Create a Race</a>
 </p>
 <table class="table">
     <thead>
@@ -17,16 +17,10 @@
                 Id
             </th>
             <th>
-                Nom de la course
+                Race Name
             </th>
             <th>
                 Date
-            </th>
-            <th>
-                Commence à
-            </th>
-            <th>
-                Nombre de places disponibles
             </th>
             <th></th>
         </tr>
@@ -41,17 +35,11 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EventDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartHour)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NbDrivers) / @Html.DisplayFor(modelItem => item.LimitDrivers)
+                @item.EventDate.ToShortDateString()
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
