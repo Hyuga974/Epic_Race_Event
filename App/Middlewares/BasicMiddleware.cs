@@ -11,9 +11,7 @@ namespace App.Middlewares
 
         public async Task InvokeAsync(HttpContext context)
         {
-            Console.WriteLine("...MW1 ===>");
             await _next(context);
-            Console.WriteLine("<=== MW1 ...");
         }
     }
 }

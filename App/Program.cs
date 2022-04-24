@@ -42,9 +42,7 @@ app.UseAuthorization();
 app.UseBasicMiddleware();
 
 app.Use(async (context, next) => {
-    Console.WriteLine("...MW2 ===>");
     await next();
-    Console.WriteLine("<=== MW2 ...");
 });
 
 // app.MapControllerRoute(
