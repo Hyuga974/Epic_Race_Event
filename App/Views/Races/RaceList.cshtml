@@ -5,7 +5,9 @@
     Layout = "_MyLayout";
 }
 
-<h1>@Model.HeaderTitle</h1>
+<h1>
+    @Model.HeaderTitle
+</h1>
 
 <p>
     <a asp-action="Create">Create a Race</a>
@@ -35,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @item.EventDate.ToShortDateString()
+                @Html.DisplayFor(modelItem => item.Date.ToString())
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App.Data;
+using App.Models;
+using App.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +12,12 @@ namespace App.Controllers
 {
     public class ProfileController : Controller
     {
+        private readonly IRepository<Profile> _profileRepository;
+
+        public ProfileController(IRepository<Profile> profileRepository)
+        {
+            _profileRepository = profileRepository;
+        }
         // GET: Profile
         public ActionResult Index()
         {
@@ -22,25 +31,40 @@ namespace App.Controllers
         }
 
         // GET: Profile/Create
-        public ActionResult Create()
+       public ActionResult Create()
         {
-            return View();
+            return View("CreateProfile");
         }
 
         // POST: Profile/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(CreateProfileRequest profile)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    // TODO: Add insert logic here
+                    Profile newProfile = new()
+                    {
+                        FirstName = profile.ProfileFirstName,
+                        LastName = profile.ProfileLastName,
+                        Email = profile.ProfileEmail,
+                        Password = profile.ProfilePassword,
+                        BirthDate = profile.ProfileBirthDate,
+                    };
+                    _profileRepository.Add(newProfile);
+                    _profileRepository.Commit();
 
-                return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Index));
+                }
+
+                return View("CreateProfile");
             }
             catch
             {
-                return View();
+                return View("CreateProfile");
             }
         }
 

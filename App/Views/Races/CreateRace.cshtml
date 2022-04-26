@@ -13,15 +13,61 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="RaceName" class="control-label"></label>
-                <input asp-for="RaceName" class="form-control" />
-                <span asp-validation-for="RaceName" class="error-label"></span>
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="error-label"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RaceDate" class="control-label"></label>
-                <input asp-for="RaceDate" class="form-control" />
-                <span asp-validation-for="RaceDate" class="text-danger"></span>
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="StartHour" class="control-label"></label>
+                <input asp-for="StartHour" class="form-control" />
+                <span asp-validation-for="StartHour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Latitude" class="control-label"></label>
+                <input asp-for="Latitude" class="form-control" />
+                <span asp-validation-for="Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Longitude" class="control-label"></label>
+                <input asp-for="Longitude" class="form-control" />
+                <span asp-validation-for="Longitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LimitDrivers" class="control-label"></label>
+                <input asp-for="LimitDrivers" class="form-control" />
+                <span asp-validation-for="LimitDrivers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriversList" class="control-label"></label>
+                <input asp-for="DriversList" class="form-control" />
+                <span asp-validation-for="DriversList" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img" class="control-label"></label>
+                <input asp-for="Img" class="form-control" />
+                <span asp-validation-for="Img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LimitAge" class="control-label"></label>
+                <input asp-for="LimitAge" class="form-control" />
+                <span asp-validation-for="LimitAge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Result" class="control-label"></label>
+                <input asp-for="Result" class="form-control" />
+                <span asp-validation-for="Result" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatVehicle" class="control-label"></label>
+                <input asp-for="CatVehicle" class="form-control" />
+                <span asp-validation-for="CatVehicle" class="text-danger"></span>
+            </div>
+            
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -29,5 +29,15 @@ namespace App.Data
         {
             return _dbContext.Races.Single(r => r.Id == id);
         }
+
+        public Profile Add(Profile model)
+        {
+            return _dbContext.Profiles.Add(model).Entity;
+        }
+
+        public Profile GetProfileById(int id)
+        {
+            return _dbContext.Profiles.Single(r => r.Id == id);
+        }
     }
 }

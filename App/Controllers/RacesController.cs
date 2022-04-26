@@ -52,18 +52,15 @@ namespace App.Controllers
         {
             return Ok("LIST ACTION CALLED !");
         }
-
         // GET: Races/Details/5
         public ActionResult Details(int id)
         {
-
             return View();
         }
 
         // GET: Races/Create
         public ActionResult Create()
         {
-
             return View("CreateRace");
         }
 
@@ -79,8 +76,17 @@ namespace App.Controllers
                     // TODO: Add insert logic here
                     Race newRace = new()
                     {
-                        Name = race.RaceName,
-                        EventDate = race.RaceDate
+                        Name = race.Name,
+                        Date = race.Date,
+                        StartHour = race.StartHour,
+                        Latitude = race.Latitude,
+                        Longitude = race.Longitude,
+                        LimitDrivers = race.LimitDrivers,
+                        DriversList = race.DriversList,
+                        Img = race.Img,
+                        LimitAge = race.LimitAge,
+                        Result = race.Result,
+                        CatVehicle = race.CatVehicle
                     };
 
                     _raceRepository.Add(newRace);
