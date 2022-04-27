@@ -21,7 +21,7 @@ namespace App.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         // GET: Profile/Details/5
@@ -48,14 +48,17 @@ namespace App.Controllers
                     // TODO: Add insert logic here
                     Profile newProfile = new()
                     {
-                        FirstName = profile.ProfileFirstName,
-                        LastName = profile.ProfileLastName,
-                        Email = profile.ProfileEmail,
-                        Password = profile.ProfilePassword,
-                        BirthDate = profile.ProfileBirthDate,
+                        FirstName = profile.FirstName,
+                        LastName = profile.LastName,
+                        Email = profile.Email,
+                        Password = profile.Password,
+                        BirthDate = profile.BirthDate,
                     };
                     _profileRepository.Add(newProfile);
                     _profileRepository.Commit();
+
+                    HttpContext.Session.SetString("Name", newProfile.FirstName);
+                    HttpContext.Session.SetInt32("Id", newProfile.Id);
 
                     return RedirectToAction(nameof(Index));
                 }

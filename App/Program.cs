@@ -8,7 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Session
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(604800);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 builder.Services.AddScoped<IRepository<Race>, EFRaceRepository>();
+builder.Services.AddScoped<IRepository<Profile>, EFProfileRepository>();
 
 var connectionString = "server=localhost;user=root;password=my_secret_psw;database=app_db";
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
@@ -37,6 +47,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.UseBasicMiddleware();
 

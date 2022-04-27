@@ -1,4 +1,5 @@
-﻿@{
+﻿@model App.ViewModels.Session
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -8,7 +9,7 @@
 
     <div class="col-auto">
         <div class="text-center">
-            <h1 class="display-4">Welcome</h1>
+            <h1 class="display-4">Welcome @Model.Name</h1>
         </div>
 
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">

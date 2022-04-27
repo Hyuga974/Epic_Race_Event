@@ -4,7 +4,6 @@ namespace App.Models
 {
     public class Driver
     {
-
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Please enter a name between 2 and 30 characters with an upper case letter at the beginning.")]
@@ -20,9 +19,6 @@ namespace App.Models
         public string? Email { get; set; }
 
         [Required()]
-        public DateTime BirthDate { get; set; }    
-
+        public DateTime BirthDate { get; set; }
     }
-
-
 } 

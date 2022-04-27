@@ -19,6 +19,6 @@ namespace App.ViewModels
         public string? Img { get; set; }
         public int LimitAge { get; set; }
         public string? Result { get; set; }
-        public string? CatVehicle { get; set; } //A changer pour un enum des vehicles
+        public List<Category>? CatVehicle { get; set; } //A changer pour un enum des vehicles
     }
 }

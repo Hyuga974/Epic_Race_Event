@@ -7,23 +7,23 @@ namespace App.ViewModels
         [Required]
         [MaxLength(30)]
         [MinLength(2)]
-        public string? ProfileFirstName { get; set; }
+        public string? FirstName { get; set; }
 
         [Required]
         [MaxLength(30)]
         [MinLength(2)]
-        public string? ProfileLastName { get; set; }
+        public string? LastName { get; set; }
 
         [Required]
-        public string? ProfileEmail { get; set; }
+        public string? Email { get; set; }
 
         [Required]
         [MaxLength(15)]
         [MinLength(8)] // 1 majuscule 1 min but jsp comment faire
-        public string? ProfilePassword { get; set; }
+        public string? Password { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)] // < 16 ans
-        public DateTime ProfileBirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }

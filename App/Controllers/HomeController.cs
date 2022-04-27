@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using App.Models;
+using App.ViewModels;
 
 namespace App.Controllers;
 
@@ -15,7 +16,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        Session session = new() {
+            Name = HttpContext.Session.GetString("Name")
+        };
+        return View("Index", session);
     }
 
     public IActionResult Privacy()

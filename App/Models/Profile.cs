@@ -11,9 +11,7 @@ namespace App.Models
         public string? Email { get; set; }
         public string? Password { get; set; }
         public DateTime BirthDate { get; set; }
-
-        public List<Vehicule> Vehicules { get; set; }
-
-        public List<RaceResult> RaceResults { get; set; }
+        public List<Vehicule>? Vehicules { get; set; }
+        public List<RaceResult>? RaceResults { get; set; }
     }
 }
