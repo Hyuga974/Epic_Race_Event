@@ -29,6 +29,7 @@ namespace App.Controllers
 				{
 					HttpContext.Session.SetString("Name", admin.Username);
 					HttpContext.Session.SetInt32("Id", admin.Id);
+					HttpContext.Session.SetString("Admin", "true");
 					Console.WriteLine("Admin Successful");
 					return RedirectToAction("Index", "Home");
 				}

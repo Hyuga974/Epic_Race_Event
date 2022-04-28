@@ -3,3 +3,24 @@
 <p>Nom: @Model.LastName</p>
 <p>Email: @Model.Email</p>
 <p>Anniversaire: @Model.BirthDate.ToShortDateString()</p>
+
+
+@if (Model.Vehicules.Count() != null)
+{
+	@foreach (var item in Model.Vehicules)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Brand)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Model)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+				@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+				@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+			</td>
+		</tr>
+	}
+}

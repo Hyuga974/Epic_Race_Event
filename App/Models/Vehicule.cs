@@ -9,7 +9,7 @@ namespace App.Models
 		public string? Brand { get; set; }
 		public string? Model { get; set; }
 		public int Power { get; set; }
-		public List<Driver>? Drivers { get; set; }
+		public List<Profile>? Drivers { get; set; }
 		public string? Img { get; set; }
 	}
 }

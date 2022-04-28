@@ -1,3 +1,5 @@
+using App.Models;
+
 namespace App.ViewModels
 {
 	public class ProfileViewModel
@@ -6,6 +8,7 @@ namespace App.ViewModels
 		public string? LastName { get; set; }
 		public string? Email { get; set; }
 		public DateTime BirthDate { get; set; }
+		public List<Vehicule>? Vehicules { get; set; }
 		public ProfileViewModel(string FName, string LName, string email, DateTime Birth)
 		{
 			FirstName = FName;
