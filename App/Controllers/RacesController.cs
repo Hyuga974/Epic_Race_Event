@@ -82,10 +82,10 @@ namespace App.Controllers
                         Latitude = race.Latitude,
                         Longitude = race.Longitude,
                         LimitDrivers = race.LimitDrivers,
-                        DriversList = race.DriversList,
+                        DriversList = new List<Profile>(),
                         Img = race.Img,
                         LimitAge = race.LimitAge,
-                        Result = race.Result,
+                        Result = "",
                         CatVehicle = race.CatVehicle
                     };
 
