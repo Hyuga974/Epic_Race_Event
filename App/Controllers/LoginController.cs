@@ -15,19 +15,20 @@ namespace App.controller
 		// GET: Login
 		public ActionResult Index()
 		{
-    	return View("Index");
-    }
+			return View("Index");
+		}
 		// POST: Login
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public ActionResult Index(LoginRequest login)
 		{
 			if (ModelState.IsValid)
 			{
 				var profile = _profileRepository.GetAll().Find(p => p.Email == login.Email);
-				if (profile != null && profile.Password == login.Password)
+				if (profile != null && BCrypt.Net.BCrypt.Verify(login.Password, profile.Password))
 				{
-					HttpContext.Session.SetString("Name" , profile.FirstName);
-					HttpContext.Session.SetInt32("Id" , profile.Id);
+					HttpContext.Session.SetString("Name", profile.FirstName);
+					HttpContext.Session.SetInt32("Id", profile.Id);
 					Console.WriteLine("Login Successful");
 					return RedirectToAction("Index", "Home");
 				}

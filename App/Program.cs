@@ -12,23 +12,24 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromSeconds(604800);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
+	options.IdleTimeout = TimeSpan.FromSeconds(604800);
+	options.Cookie.HttpOnly = true;
+	options.Cookie.IsEssential = true;
 });
 
 builder.Services.AddScoped<IRepository<Race>, EFRaceRepository>();
 builder.Services.AddScoped<IRepository<Profile>, EFProfileRepository>();
+builder.Services.AddScoped<IRepository<Admin>, EFAdminRepository>();
 
 var connectionString = "server=localhost;user=root;password=my_secret_psw;database=app_db";
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
 
 builder.Services.AddDbContext<AppDbContext>(
-  dbContextOptions => dbContextOptions
-    .UseMySql(connectionString, serverVersion)
-    .LogTo(Console.WriteLine, LogLevel.Information)
-    .EnableSensitiveDataLogging()
-    .EnableDetailedErrors()
+	dbContextOptions => dbContextOptions
+		.UseMySql(connectionString, serverVersion)
+		.LogTo(Console.WriteLine, LogLevel.Information)
+		.EnableSensitiveDataLogging()
+		.EnableDetailedErrors()
 );
 
 var app = builder.Build();
@@ -36,9 +37,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+	app.UseExceptionHandler("/Home/Error");
+	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+	app.UseHsts();
 }
 
 app.UseHttpsRedirection();
@@ -52,8 +53,9 @@ app.UseSession();
 
 app.UseBasicMiddleware();
 
-app.Use(async (context, next) => {
-    await next();
+app.Use(async (context, next) =>
+{
+	await next();
 });
 
 // app.MapControllerRoute(
@@ -77,14 +79,14 @@ app.Use(async (context, next) => {
 //     );
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+		name: "default",
+		pattern: "{controller=Home}/{action=Index}/{id?}");
 
 using (var scope = app.Services.CreateScope())
 {
-    scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
-    scope.ServiceProvider.GetRequiredService<AppDbContext>().Seed();
-    // TODO SEED DATA
+	scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
+	scope.ServiceProvider.GetRequiredService<AppDbContext>().Seed();
+	// TODO SEED DATA
 }
 
 app.Run();
