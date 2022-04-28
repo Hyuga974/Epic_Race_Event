@@ -87,49 +87,32 @@ namespace App.Controllers
 			}
 		}
 
-		// GET: Profile/Edit/5
-		public ActionResult Edit(int id)
+		// GET: Profile/Edit
+		public ActionResult Edit()
 		{
-			return View();
+			return View("EditProfile");
 		}
 
-		// POST: Profile/Edit/5
+		// POST: Profile/Edit
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit(int id, IFormCollection collection)
+		public ActionResult Edit(EditProfilRequest request)
 		{
 			try
 			{
-				// TODO: Add update logic here
-
-				return RedirectToAction(nameof(Index));
+				if (ModelState.IsValid)
+				{
+					Profile profile = _profileRepository.GetById((int)HttpContext.Session.GetInt32("Id"));
+					profile.FirstName = request.FirstName;
+					profile.LastName = request.LastName;
+					_profileRepository.Commit();
+					return RedirectToAction("Index");
+				}
+				return View("EditProfile");
 			}
 			catch
 			{
-				return View();
-			}
-		}
-
-		// GET: Profile/Delete/5
-		public ActionResult Delete(int id)
-		{
-			return View();
-		}
-
-		// POST: Profile/Delete/5
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Delete(int id, IFormCollection collection)
-		{
-			try
-			{
-				// TODO: Add delete logic here
-
-				return RedirectToAction(nameof(Index));
-			}
-			catch
-			{
-				return View();
+				return View("Index");
 			}
 		}
 	}
