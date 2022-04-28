@@ -21,7 +21,18 @@ namespace App.Controllers
 		// GET: Profile
 		public ActionResult Index()
 		{
-			return View("Index");
+			if (HttpContext.Session.GetInt32("Id") == null)
+			{
+				return RedirectToAction("Index", "Login");
+			}
+			var user = _profileRepository.GetById((int)HttpContext.Session.GetInt32("Id"));
+			ProfileViewModel profile = new(
+				user.FirstName,
+				user.LastName,
+				user.Email,
+				user.BirthDate
+			);
+			return View("Index", profile);
 		}
 
 		// GET: Profile/Details/5
@@ -46,6 +57,12 @@ namespace App.Controllers
 				if (ModelState.IsValid)
 				{
 					// TODO: Add insert logic here
+					// check if the user is more than 16 years old
+					if (profile.BirthDate.AddYears(16) > DateTime.Now)
+					{
+						ModelState.AddModelError("DateOfBirth", "You must be at least 16 years old to register");
+						return View("CreateProfile");
+					}
 					Profile newProfile = new()
 					{
 						FirstName = profile.FirstName,
@@ -62,7 +79,6 @@ namespace App.Controllers
 
 					return RedirectToAction(nameof(Index));
 				}
-
 				return View("CreateProfile");
 			}
 			catch

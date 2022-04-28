@@ -1,1 +1,5 @@
-<p>Coucou t'es bien sur la page Profile !</p>
+@model App.ViewModels.ProfileViewModel
+<p>Prénom: @Model.FirstName</p>
+<p>Nom: @Model.LastName</p>
+<p>Email: @Model.Email</p>
+<p>Anniversaire: @Model.BirthDate.ToShortDateString()</p>
