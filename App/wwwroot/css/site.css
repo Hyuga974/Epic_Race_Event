@@ -15,7 +15,47 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #ffefe6;
 }
+
+.myNavbar {
+  background-color: #960200;
+  border-radius: 0 0 25px 25px;
+  width: 95%;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 100px; 
+  box-shadow: 0 0 15px rgb(87, 35, 0);
+}
+
+.myBrand {
+  background-color: #ffefe6;
+  border:solid 15px #960200;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  color: #960200; 
+  position: absolute;
+  left: 50%;
+  top: 0;
+  text-align: center;
+  margin-left: -100px;
+}
+
+.myBrandShadow {
+  background-color: transparent;
+  border:solid 15px transparent;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 0;
+  box-shadow: 0 0 15px rgb(87, 35, 0);
+  z-index: -1;
+}
+
 
 /* .validation-summary-errors {
   border: 2px solid red;
